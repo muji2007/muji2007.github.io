@@ -11,7 +11,7 @@
 #aside-content .music-floating-player {
   display: none;
   margin-bottom: 20px;
-  padding: 18px 18px 16px;
+  padding: 18px 18px 22px;
 }
 
 #aside-content .music-floating-player.is-mounted {
@@ -19,14 +19,14 @@
 }
 
 #aside-content .music-floating-player .item-headline {
-  padding-bottom: 10px;
+  padding-bottom: 12px;
 }
 
 #aside-content .music-floating-player .music-player-shell {
   overflow: hidden;
-  border-radius: 18px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(248, 250, 252, 0.88));
-  box-shadow: 0 14px 34px rgba(31, 45, 61, 0.1);
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.9));
+  box-shadow: 0 18px 38px rgba(31, 45, 61, 0.1);
 }
 
 #aside-content .music-floating-player .aplayer,
@@ -38,7 +38,7 @@
   margin: 0;
   width: 100% !important;
   max-width: none !important;
-  border-radius: 18px;
+  border-radius: 22px;
   background: transparent;
   box-shadow: none;
 }
@@ -48,34 +48,36 @@
   position: relative;
   left: 0 !important;
   bottom: 0 !important;
+  display: block;
   width: 100% !important;
   height: auto !important;
   border: 0;
-  border-radius: 18px;
+  border-radius: 22px;
   background: transparent;
 }
 
 #aside-content .music-floating-player .aplayer .aplayer-pic {
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  width: 84px;
-  height: 84px;
-  border: 9px solid #151922;
+  position: relative;
+  top: auto;
+  left: auto;
+  margin: 22px auto 18px;
+  width: 168px;
+  height: 168px;
+  border: 12px solid #151922;
   border-radius: 50%;
   background-color: #111827;
   box-shadow:
     inset 0 0 0 2px rgba(255, 255, 255, 0.08),
-    inset 0 0 0 14px rgba(255, 255, 255, 0.04),
-    0 12px 26px rgba(15, 23, 42, 0.18);
+    inset 0 0 0 18px rgba(255, 255, 255, 0.04),
+    0 16px 30px rgba(15, 23, 42, 0.2);
   animation: vinyl-spin 9s linear infinite paused;
 }
 
 #aside-content .music-floating-player .aplayer .aplayer-pic::before {
   content: "";
   position: absolute;
-  inset: 13px;
-  border: 1px solid rgba(255, 255, 255, 0.13);
+  inset: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 50%;
 }
 
@@ -84,12 +86,12 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: radial-gradient(circle, #f8fafc 0 32%, #9ca3af 33% 100%);
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 0 4px rgba(17, 24, 39, 0.55);
+  box-shadow: 0 0 0 5px rgba(17, 24, 39, 0.55);
 }
 
 #aside-content .music-floating-player .aplayer.aplayer-playing .aplayer-pic {
@@ -98,32 +100,84 @@
 
 #aside-content .music-floating-player .aplayer .aplayer-info {
   margin-left: 0;
-  padding: 18px 16px 14px 16px;
+  padding: 0 18px 18px;
 }
 
 #aside-content .music-floating-player .aplayer .aplayer-info .aplayer-music {
-  margin: 0 36px 10px 106px;
-  min-height: 60px;
+  margin: 0 0 12px;
+  min-height: 0;
+  text-align: center;
 }
 
 #aside-content .music-floating-player .aplayer .aplayer-info .aplayer-music .aplayer-title {
   display: block;
-  color: #1f2937;
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 1.45;
+  color: #111827;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.35;
+  word-break: break-word;
 }
 
 #aside-content .music-floating-player .aplayer .aplayer-info .aplayer-music .aplayer-author {
   display: block;
-  margin-top: 4px;
+  margin-top: 8px;
+  color: #6b7280;
+  font-size: 17px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+#aside-content .music-floating-player .aplayer .aplayer-lrc {
+  display: block !important;
+  position: relative;
+  margin: 0 0 16px;
+  height: 92px !important;
+  overflow: hidden;
+  mask-image: linear-gradient(180deg, transparent 0, rgba(0, 0, 0, 0.95) 18%, rgba(0, 0, 0, 0.95) 82%, transparent 100%);
+}
+
+#aside-content .music-floating-player .aplayer .aplayer-lrc p {
   color: #6b7280;
   font-size: 13px;
-  line-height: 1.4;
+  line-height: 1.75;
+}
+
+#aside-content .music-floating-player .aplayer .aplayer-lrc p.aplayer-lrc-current {
+  color: #1f2937;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#aside-content .music-floating-player .aplayer .aplayer-info .aplayer-controller {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  padding-left: 0;
+}
+
+#aside-content .music-floating-player .aplayer .aplayer-bar-wrap {
+  margin-right: 0;
+}
+
+#aside-content .music-floating-player .aplayer .aplayer-time {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 12px;
+  height: auto !important;
+  color: #6b7280;
+}
+
+#aside-content .music-floating-player .aplayer .aplayer-time .aplayer-time-inner {
+  order: -1;
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
 }
 
 #aside-content .music-floating-player .aplayer .aplayer-button {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.94);
   box-shadow: 0 8px 18px rgba(15, 23, 42, 0.15);
 }
 
@@ -131,23 +185,15 @@
   fill: #49b1f5;
 }
 
-#aside-content .music-floating-player .aplayer .aplayer-info .aplayer-controller {
-  align-items: center;
-  padding-left: 106px;
-}
-
-#aside-content .music-floating-player .aplayer .aplayer-bar-wrap {
-  margin-right: 8px;
-}
-
-#aside-content .music-floating-player .aplayer .aplayer-time,
 #aside-content .music-floating-player .aplayer .aplayer-icon {
   color: #6b7280;
+  opacity: 0.92;
 }
 
 #aside-content .music-floating-player .aplayer .aplayer-list {
   border-top: 1px solid rgba(148, 163, 184, 0.14);
   background: rgba(248, 250, 252, 0.82);
+  max-height: 260px !important;
 }
 
 #aside-content .music-floating-player .aplayer .aplayer-list ol li {
@@ -158,32 +204,30 @@
   background: rgba(73, 177, 245, 0.12);
 }
 
-#aside-content .music-floating-player .aplayer .aplayer-lrc {
-  display: none !important;
-}
-
 [data-theme='dark'] #aside-content .music-floating-player .music-player-shell {
-  background: linear-gradient(180deg, rgba(24, 28, 35, 0.94), rgba(20, 24, 31, 0.9));
-  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.28);
+  background: linear-gradient(180deg, rgba(24, 28, 35, 0.95), rgba(20, 24, 31, 0.92));
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
 }
 
-[data-theme='dark'] #aside-content .music-floating-player .aplayer .aplayer-info .aplayer-music .aplayer-title {
+[data-theme='dark'] #aside-content .music-floating-player .aplayer .aplayer-info .aplayer-music .aplayer-title,
+[data-theme='dark'] #aside-content .music-floating-player .aplayer .aplayer-lrc p.aplayer-lrc-current {
   color: #f3f4f6;
 }
 
 [data-theme='dark'] #aside-content .music-floating-player .aplayer .aplayer-info .aplayer-music .aplayer-author,
+[data-theme='dark'] #aside-content .music-floating-player .aplayer .aplayer-lrc p,
 [data-theme='dark'] #aside-content .music-floating-player .aplayer .aplayer-time,
 [data-theme='dark'] #aside-content .music-floating-player .aplayer .aplayer-icon {
   color: rgba(229, 231, 235, 0.74);
 }
 
 [data-theme='dark'] #aside-content .music-floating-player .aplayer .aplayer-button {
-  background: rgba(17, 24, 39, 0.88);
+  background: rgba(17, 24, 39, 0.9);
 }
 
 [data-theme='dark'] #aside-content .music-floating-player .aplayer .aplayer-list {
   border-top-color: rgba(255, 255, 255, 0.08);
-  background: rgba(17, 24, 39, 0.72);
+  background: rgba(17, 24, 39, 0.74);
 }
 
 [data-theme='dark'] #aside-content .music-floating-player .aplayer .aplayer-list ol li {
@@ -196,21 +240,20 @@
 
 @media (max-width: 900px) {
   #aside-content .music-floating-player {
-    padding: 16px;
+    padding: 16px 16px 20px;
   }
 
   #aside-content .music-floating-player .aplayer .aplayer-pic {
-    width: 76px;
-    height: 76px;
-    border-width: 8px;
+    width: 144px;
+    height: 144px;
+    border-width: 10px;
   }
 
-  #aside-content .music-floating-player .aplayer .aplayer-info .aplayer-music {
-    margin-left: 98px;
-    min-height: 56px;
+  #aside-content .music-floating-player .aplayer .aplayer-info .aplayer-music .aplayer-title {
+    font-size: 22px;
   }
 
-  #aside-content .music-floating-player .aplayer .aplayer-info .aplayer-controller {
-    padding-left: 98px;
+  #aside-content .music-floating-player .aplayer .aplayer-info .aplayer-music .aplayer-author {
+    font-size: 15px;
   }
 }
