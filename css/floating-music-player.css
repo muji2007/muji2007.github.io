@@ -210,11 +210,9 @@
   background: rgba(73, 177, 245, 0.18);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   .music-floating-player {
     right: 18px;
-    top: auto;
-    bottom: 24px;
     width: 304px;
   }
 
