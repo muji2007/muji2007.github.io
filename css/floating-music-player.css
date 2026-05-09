@@ -209,6 +209,14 @@
   max-height: 220px !important;
 }
 
+#aside-content .music-floating-player .aplayer .aplayer-list.aplayer-list-hide {
+  display: none !important;
+}
+
+#aside-content .music-floating-player .aplayer .aplayer-list:not(.aplayer-list-hide) {
+  display: block !important;
+}
+
 #aside-content .music-floating-player .aplayer .aplayer-list ol li {
   border-top-color: rgba(148, 163, 184, 0.12);
 }
