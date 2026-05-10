@@ -120,12 +120,13 @@
 #aside-content .music-floating-player .aplayer .aplayer-info .aplayer-music .aplayer-title {
   display: block;
   color: #111827;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 700;
-  line-height: 1.35;
+  line-height: 1.4;
   white-space: normal;
   word-break: break-word;
   overflow-wrap: anywhere;
+  max-width: 100%;
 }
 
 #aside-content .music-floating-player .aplayer .aplayer-info .aplayer-music .aplayer-author {
@@ -322,7 +323,7 @@
   }
 
   #aside-content .music-floating-player .aplayer .aplayer-info .aplayer-music .aplayer-title {
-    font-size: 20px;
+    font-size: 17px;
   }
 
   #aside-content .music-floating-player .aplayer .aplayer-info .aplayer-music .aplayer-author {
