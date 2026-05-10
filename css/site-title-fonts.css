@@ -1,0 +1,28 @@
+:root {
+  --site-zh-font:
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    "Noto Sans SC",
+    "Source Han Sans SC",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+}
+
+#blog-info .site-name,
+#site-title,
+#site-subtitle,
+#subtitle {
+  font-family: var(--site-zh-font);
+  letter-spacing: 0;
+}
+
+#site-title {
+  font-weight: 700;
+}
+
+#site-subtitle,
+#subtitle {
+  font-weight: 500;
+}
