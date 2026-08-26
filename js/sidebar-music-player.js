@@ -208,7 +208,11 @@
     });
 
     actions.querySelector('.music-player-action--play')?.addEventListener('click', () => {
-      getNativeButton('.aplayer-icon-play')?.click();
+      // Trigger APlayer's main control directly. The smaller controller icon is
+      // not consistently interactive across browsers and touch devices.
+      const nativePlayButton = getNativeButton('.aplayer-pic .aplayer-button')
+        || getNativeButton('.aplayer-icon-play');
+      nativePlayButton?.click();
       window.setTimeout(syncPlayButton, 80);
     });
 
