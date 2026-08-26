@@ -1,0 +1,40 @@
+# Keep the public blog discoverable in major search engines while asking all
+# other automated clients not to crawl it. robots.txt is advisory; enforcement
+# requires an edge proxy/WAF in front of GitHub Pages.
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Sogou
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Keep link previews working when posts are shared.
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: *
+Disallow: /
