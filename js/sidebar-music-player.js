@@ -102,7 +102,8 @@
     if (!player || !playButton) return;
 
     const icon = playButton.querySelector('i');
-    const isPlaying = player.classList.contains('aplayer-playing');
+    const nativePlayButton = getNativeButton('.aplayer-pic .aplayer-button');
+    const isPlaying = nativePlayButton?.classList.contains('aplayer-pause') || false;
 
     icon.className = isPlaying ? 'fas fa-pause' : 'fas fa-play';
     playButton.setAttribute('title', isPlaying ? '暂停播放' : '继续播放');
@@ -236,6 +237,14 @@
       attributes: true,
       attributeFilter: ['class']
     });
+
+    const nativePlayButton = getNativeButton('.aplayer-pic .aplayer-button');
+    if (nativePlayButton) {
+      observer.observe(nativePlayButton, {
+        attributes: true,
+        attributeFilter: ['class']
+      });
+    }
 
     player.dataset.sidebarObserved = 'true';
   };
