@@ -1,7 +1,7 @@
 import {
   configure,
   createMascot
-} from "/vendor/web-mascot/dist/index.js";
+} from "/vendor/web-mascot/dist/index.js?v=20261024-scroll1";
 
 configure({
   assets: "/vendor/web-mascot/dist/mascot_pack",

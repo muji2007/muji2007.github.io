@@ -1,5 +1,5 @@
-import { M as L, l as Y } from "./chunks/MascotEngine-BegMTn5U.js";
-import { c as Ae, a as $e, d as Ie, b as Te } from "./chunks/MascotEngine-BegMTn5U.js";
+import { M as L, l as Y } from "./chunks/MascotEngine-BegMTn5U.js?v=20261024-scroll1";
+import { c as Ae, a as $e, d as Ie, b as Te } from "./chunks/MascotEngine-BegMTn5U.js?v=20261024-scroll1";
 const $ = "/__mascot-log", q = 256, K = 4096, Z = 1e3, ee = 32, te = 3e3, ne = 500, B = 2, R = 1500, oe = 8, se = 12e4, ae = 6, ie = 500, M = "_index", P = Y("observe"), I = (/* @__PURE__ */ new Date()).toISOString().replace(/[:.]/g, "-"), re = performance.now(), u = /* @__PURE__ */ new Map(), S = /* @__PURE__ */ new Map(), p = /* @__PURE__ */ new Map(), h = /* @__PURE__ */ new Map();
 let k = null;
 const x = [];

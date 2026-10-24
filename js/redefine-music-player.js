@@ -12,6 +12,17 @@
     const playerCard = getPlayerCard();
     const stickyLayout = document.querySelector('.home-sidebar-container .sticky-container, #aside-content .sticky_layout');
 
+    const profile = stickyLayout?.querySelector('.sidebar-content');
+    const links = stickyLayout?.querySelector('.sidebar-links');
+    if (profile && links) {
+      for (const link of links.querySelectorAll('a.links')) {
+        link.classList.add('profile-follow-link');
+        profile.appendChild(link);
+      }
+      links.querySelector('.site-name')?.remove();
+      if (!links.querySelector('.announcement')?.textContent.trim()) links.remove();
+    }
+
     if (!playerCard) return;
 
     const inSidebar = Boolean(stickyLayout && desktop.matches);

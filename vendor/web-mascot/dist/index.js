@@ -1,8 +1,8 @@
 var c = Object.defineProperty;
 var u = (e, t, r) => t in e ? c(e, t, { enumerable: !0, configurable: !0, writable: !0, value: r }) : e[t] = r;
 var o = (e, t, r) => u(e, typeof t != "symbol" ? t + "" : t, r);
-import { M as n } from "./chunks/MascotEngine-BegMTn5U.js";
-import { A as M, B as _ } from "./chunks/MascotEngine-BegMTn5U.js";
+import { M as n } from "./chunks/MascotEngine-BegMTn5U.js?v=20261024-scroll1";
+import { A as M, B as _ } from "./chunks/MascotEngine-BegMTn5U.js?v=20261024-scroll1";
 const f = "/mascot_pack";
 function l(e) {
   if (e)

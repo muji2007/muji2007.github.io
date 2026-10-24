@@ -1,6 +1,16 @@
 NOTICE
 ======
 
+Local blog modification, 2026-10-24:
+src/core/MascotEngine.ts and dist/chunks/MascotEngine-BegMTn5U.js were changed
+to skip container IntersectionObserver pausing for document.body and
+document.documentElement hosts. Fixed viewport mascots must continue animating
+when a short document-root box scrolls out of view. Embedded container visibility,
+hidden-document pausing and cross-page ownership are unchanged.
+The dist entry points use a cache version for this patched engine chunk.
+The patched chunk no longer links the upstream source map; its matching edited
+TypeScript source remains included under src/core/.
+
 web-mascot — an embeddable browser mascot engine
 https://github.com/CommentOut64/web-mascot/tree/HEAD/web-mascot
 

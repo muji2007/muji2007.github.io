@@ -1625,6 +1625,9 @@ const ye = 150, S = 128, ut = "*", be = 80, xe = 1.25, ke = 260, ft = 12, we = 6
   /** Pause while the mascot's container is scrolled out of view, so an embedded
    *  mascot costs nothing when the visitor is reading another part of the page. */
   watchVisibility() {
+    // Blog patch (2026-10-24): document roots host fixed viewport mascots.
+    // Their body box may scroll offscreen while the mascots remain visible.
+    if (this.container === document.body || this.container === document.documentElement) return;
     if (typeof IntersectionObserver != "function") return;
     const t = this.container ?? this.elRoot;
     try {
@@ -3072,4 +3075,3 @@ export {
   Pe as d,
   de as l
 };
-//# sourceMappingURL=MascotEngine-BegMTn5U.js.map

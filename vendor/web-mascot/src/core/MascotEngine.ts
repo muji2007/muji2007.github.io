@@ -896,6 +896,10 @@ export class MascotEngine {
   /** Pause while the mascot's container is scrolled out of view, so an embedded
    *  mascot costs nothing when the visitor is reading another part of the page. */
   private watchVisibility() {
+    // Blog patch (2026-10-24): fixed viewport mascots mounted on a document root
+    // remain visible even when a short body box scrolls away from overflowing content.
+    // Document visibility/page ownership still pause them through separate guards.
+    if (this.container === document.body || this.container === document.documentElement) return;
     if (typeof IntersectionObserver !== "function") return;
     // Observe the container, not elRoot: elRoot is an empty fixed div whose only
     // child is absolutely positioned, so its own box is 0x0 and an observer on it

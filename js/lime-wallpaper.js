@@ -55,7 +55,8 @@ out vec4 color;
 uniform sampler2D u_mask;
 uniform float u_time, u_spectrum[64];
 void main() {
-  vec2 p = v_uv - .5;
+  vec2 uv = vec2(v_uv.x, 1. - v_uv.y);
+  vec2 p = uv - .5;
   float a = u_time * .2, c = cos(a), s = sin(a);
   if (length(p) < .499) p = mat2(c, s, -s, c) * p;
   float distance = 1.;
@@ -72,7 +73,7 @@ void main() {
     distance = min(distance, min(rectangle, min(cap1, cap2)));
   }
   float coverage = 1. - smoothstep(-fwidth(distance), fwidth(distance), distance);
-  color = vec4(vec3(1.), coverage * texture(u_mask, v_uv).r);
+  color = vec4(vec3(1.), coverage * texture(u_mask, uv).r);
 }`;
 
 async function start() {
@@ -138,11 +139,6 @@ async function start() {
   }));
 
   let width = 0, height = 0, scale = 1, offsetX = 0, offsetY = 0, frame = 0, lastFrame = -Infinity;
-  const clock = document.createElement('div');
-  clock.className = 'lime-wallpaper-clock';
-  clock.setAttribute('aria-hidden', 'true');
-  const hero = document.querySelector('.home-banner-container');
-  if (hero) root.appendChild(clock);
   root.appendChild(canvas);
   function resize() {
     const bounds = root.getBoundingClientRect();
@@ -153,21 +149,11 @@ async function start() {
     scale = Math.max(width / scene.width, height / scene.height);
     offsetX = Math.min(0, Math.max(width - scene.width * scale, width / 2 - scene.focusX * scale));
     offsetY = (height - scene.height * scale) / 2;
-    clock.style.left = `${offsetX + scene.clock.origin[0] * scale}px`;
-    clock.style.top = `${offsetY + (scene.height - scene.clock.origin[1]) * scale}px`;
-    clock.style.fontSize = `${scene.clock.fontSize * scale}px`;
     gl.viewport(0, 0, canvas.width, canvas.height);
   }
   resize();
   const resizeObserver = new ResizeObserver(() => { resize(); if (reduced.matches) draw(0); });
   resizeObserver.observe(root);
-  if (hero) new IntersectionObserver(entries => { clock.hidden = !entries[0].isIntersecting; }).observe(hero);
-  function updateClock() {
-    const now = new Date();
-    clock.textContent = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
-  }
-  updateClock();
-  window.setInterval(updateClock, 1000);
 
   const spectrum = new Float32Array(64);
   let context, analyser, source, audio, samples;
@@ -241,7 +227,7 @@ async function start() {
       gl.uniform2f(p.location('u_viewport'), width, height);
       gl.uniform2f(p.location('u_origin'), offsetX + layer.origin[0] * scale, offsetY + (scene.height - layer.origin[1]) * scale);
       gl.uniform2f(p.location('u_size'), layer.size[0] * scale, layer.size[1] * scale);
-      gl.uniform1f(p.location('u_angle'), -(layer.angle || 0) * Math.PI / 180);
+      gl.uniform1f(p.location('u_angle'), (layer.kind === 'spectrum' ? 1 : -1) * (layer.angle || 0) * Math.PI / 180);
       gl.uniform1f(p.location('u_time'), reduced.matches ? 0 : now / 1000);
       if (layer.kind === 'image') {
         const shake = layer.effects.find(e => e.type === 'shake');

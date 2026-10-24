@@ -24,6 +24,23 @@
   padding: 4px;
 }
 
+.home-sidebar-container .sidebar-content .profile-follow-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+  font-weight: 600;
+}
+
+.profile-follow-link:focus-visible {
+  outline: 2px solid #49b1f5;
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+
 @media (max-width: 768px) {
   .home-sidebar-container {
     display: none;
