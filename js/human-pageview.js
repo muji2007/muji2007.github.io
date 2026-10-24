@@ -12,6 +12,13 @@
   var isAutomated = Boolean(navigator.webdriver) || botPattern.test(userAgent)
 
   function replaceSpinners(value) {
+    // Redefine loads this script before rendering its footer counter elements.
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () {
+        replaceSpinners(value)
+      }, { once: true })
+    }
+
     var ids = [
       'busuanzi_value_site_uv',
       'busuanzi_value_site_pv',

@@ -13,7 +13,12 @@
 #blog-info .site-name,
 #site-title,
 #site-subtitle,
-#subtitle {
+#subtitle,
+.navbar-container .logo-title,
+.navbar-container .logo-title a,
+.home-sidebar-container .site-name,
+.home-banner-container .description,
+.home-banner-container .description p {
   font-family: var(--site-zh-font);
   letter-spacing: 0;
 }

@@ -1,0 +1,39 @@
+/* Preserve the blog's identity while using Redefine's layout and theme colors. */
+.home-banner-container .description {
+  padding-inline: 24px;
+  gap: 18px;
+  font-weight: 700;
+  line-height: 1.45;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
+}
+
+.home-banner-container .description p {
+  padding-inline: 12px;
+  line-height: 1.7;
+}
+
+.home-sidebar-container {
+  flex: 0 0 260px;
+  width: 260px;
+}
+
+.home-sidebar-container .sticky-container {
+  max-height: calc(100dvh - 85px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  padding: 4px;
+}
+
+@media (max-width: 768px) {
+  .home-sidebar-container {
+    display: none;
+  }
+
+  .home-banner-container .description {
+    font-size: clamp(1.75rem, 6.2vw, 2.5rem);
+  }
+
+  .home-banner-container #subtitle {
+    font-size: clamp(1rem, 3.8vw, 1.3rem);
+  }
+}
