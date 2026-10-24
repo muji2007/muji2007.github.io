@@ -1,0 +1,10 @@
+Lanren Shop Zhuyuan Title — five-character WOFF2 subset
+Original font: 猫啃珠圆体 / MaokenZhuyuanTi, Version 1.000 (2023-02-22)
+Authors: 猫啃网, Little White Dog, 频凡; Fontworks Inc & LongZhuTi team
+Copyright 2022-2023 LongZhuTi Project Authors. Copyright 2020 The RocknRoll Project Authors (https://github.com/fontworks-fonts/RocknRoll)
+Original release: https://www.maoken.com/freefonts/17948.html
+Source distribution: @chinese-fonts/mkzyt@3.0.0
+https://registry.npmjs.org/@chinese-fonts/mkzyt/-/mkzyt-3.0.0.tgz
+License: SIL OFL 1.1 (OFL.txt); the font is not licensed under the distributor's MIT code license.
+Modified 2026-10-24: retained 烂人售货机, removed hinting/layout, renamed family, compressed to WOFF2.
+Rebuild: tools/prepare-title-font.py <mkzyt-3.0.0.tgz> <official-OFL.txt>

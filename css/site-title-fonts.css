@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Lanren Shop Zhuyuan";
+  src: url("/fonts/lanren-shop-zhuyuan-title.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+4EBA, U+552E, U+673A, U+70C2, U+8D27;
+}
+
 :root {
   --site-zh-font:
     "PingFang SC",
@@ -21,6 +30,14 @@
 .home-banner-container .description p {
   font-family: var(--site-zh-font);
   letter-spacing: 0;
+}
+
+.navbar-container .logo-title,
+.navbar-container .logo-title h1 {
+  font-family: "Lanren Shop Zhuyuan", var(--site-zh-font);
+  font-weight: 400;
+  font-synthesis: none;
+  letter-spacing: 0.04em;
 }
 
 #site-title {
